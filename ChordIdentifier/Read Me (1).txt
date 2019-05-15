@@ -1,0 +1,66 @@
+﻿Chord Identifier
+Surya Shivakumar and Omar Shohoud
+
+
+Description: This program allows the user to select several notes from a given list. The program then uses an algorithm to identify the chord that contains the given notes, and display it to the user. The user can input as many notes as they want. This program would be useful when attempting to analyze music and understand the musical devices that the composer has implemented, so that one may learn from said music. It also may be used by composers to implement better voice-leading within their melodies while maintaining a harmonic progression that makes sense. 
+
+
+Class List:
+Must:
+Note
+Main
+DrawingSurface
+Staff
+Chord
+Interval
+Maybe:
+        Notation
+Clef
+
+
+Features List
+        Must Have:
+* Staff with clef UI
+* Clickable buttons that correspond to notes (Or clickable keyboard)
+* Note appears on ledger
+* Click “Confirm” to lock in notes and see chord symbol
+* Buttons to restart or continue editing
+* Notes must be entered in pitch order (1st note is lowest, 2nd note is next lowest, etc.)
+        Want to have:
+* Plays the note when its corresponding button is clicked.
+* Plays the entire chord when it is locked in.
+* Able to switch between different musical notations depending on style/era (jazz, figured bass, etc.).
+* Able to hear how the chord sounds on different instruments.
+* Modify clef.
+        Stretch:
+* Suggested next chord based on voice-leading algorithm.
+* List how the chord functions in a given key signature/mode
+* Suggest a key signature/mode that the chord fits best in
+* Describe emotion that the chord could be used to evoke and why.
+* Ability to modify octaves/inversions in real-time on a full staff (treble and bass).
+
+
+Instructions:
+1. Open the program.
+2. Using the mouse, left-click on the buttons/keys of the notes you would like to include in the chord.
+3. Right-click on any notes you would like to remove.
+4. Left-click Confirm when you have entered all notes you would like to include.
+5. Left-click Restart to enter a new chord, or Continue Editing to add or remove notes from the current chord.
+Want-to-have feature instructions:
+1. Press the spacebar to switch between treble and bass clefs.
+2. Press right-and-left arrow keys to cycle between different musical notations.
+3. Press up-and-down arrow keys to cycle between instruments.
+4. Left-click on an already inputted note to hear how it sounds again.
+5. Press Enter after clicking confirm to hear how the chord sounds again.
+   1. Maybe, for certain instruments, hold enter to sustain the chord, release to end.
+
+
+Responsibilities/Credit List:
+        Note, Chord, Interval, Notation: Omar
+        Main, DrawingSurface, Staff, Clef: Surya
+
+
+Feedback
+        UML - Not all classes are being used …. 
+        Classes need to depend on other classes. - Must have doesn't seem very full of difficult things
+        Want to have seem like must haves
