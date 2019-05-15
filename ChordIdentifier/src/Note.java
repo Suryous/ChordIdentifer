@@ -107,12 +107,12 @@ public class Note {
 	 * The value representing a double-flat accidental. The value is determined by how the accidental modifies the letter note value.
 	 */
 	public static final int DOUBLE_FLAT = -2;
-	
+	 
 	/**
 	 * Creates a note with a natural accidental.
 	 * @param letter The letter name of the note.
 	 */
-	public Note(String letter) {
+	public Note(String letter, int octave) {
 		name += letter.toUpperCase();
 		if (letter.equalsIgnoreCase("A")) {
 			val = A;
@@ -135,7 +135,7 @@ public class Note {
 		else if (letter.equalsIgnoreCase("G")) {
 			val = G;
 		}
-		
+		this.octave = octave;
 	}
 	
 	/**
@@ -143,7 +143,7 @@ public class Note {
 	 * @param letter The letter name of the note.
 	 * @param a The accidental of the note.
 	 */
-	public Note(String letter, int a) {
+	public Note(String letter, int a, int octave) {
 		name += letter.toUpperCase();
 		val = getValFromLetter(letter) + a;
 		
@@ -159,7 +159,7 @@ public class Note {
 		else if (a == -2) {
 			name += "bb";
 		}
-		
+		this.octave = octave;
 	}
 	
 	/**
@@ -192,6 +192,7 @@ public class Note {
 		else {
 			return -1;
 		}
+		
 	}
 	
 	/**
@@ -234,6 +235,11 @@ public class Note {
 		return new Interval(this, other);
 	}
 	
+	public int getOctave() {
+		return octave;
+	}
 	
-	
+	public String toString() {
+		return name + " " + octave;
+	}
 }

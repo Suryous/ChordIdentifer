@@ -2,29 +2,38 @@
 public class Interval {
 
 	private int value;
-	private char quality;
+	private String quality;
 	
 	
+	/**
+	 * The String indicating a double-diminished interval
+	 */
+	public static final String DOUBLE_DIMINISHED = "°°";
 	/**
 	 * The character indicating a diminished interval
 	 */
-	public static final int DIMINISHED = '°';
+	public static final String DIMINISHED = "°";
 	/**
 	 * The character indicating a minor interval
 	 */
-	public static final char MINOR = 'm';
+	public static final String MINOR = "min";
 	/**
 	 * The character indicating a perfect interval
 	 */
-	public static final char PERFECT = 'P';
+	public static final String PERFECT = "P";
 	/**
 	 * The character indicating a major interval
 	 */
-	public static final char MAJOR = 'M';
+	public static final String MAJOR = "Maj";
 	/**
 	 * The character indicating an augmented interval
+	 *
 	 */
-	public static final char AUGMENTED = '+';
+	public static final String AUGMENTED = "+";
+	/**
+	 * The String indicating a double-augmented interval
+	 */
+	public static final String DOUBLE_AUGMENTED = "++";
 	
 	/**
 	 * Constructs an Interval with a quality and value based on the interval between two notes.
@@ -45,6 +54,9 @@ public class Interval {
 			else if (test == 1) {
 				quality = AUGMENTED;
 			}
+			else if (test == 2) {
+				quality = DOUBLE_AUGMENTED;
+			}
 		}
 		else if (value == 2) {
 			if (test == 0) {
@@ -59,9 +71,15 @@ public class Interval {
 			else if (test == 3) {
 				quality = AUGMENTED;
 			}
+			else if (test == 4) {
+				quality = DOUBLE_AUGMENTED;
+			}
 		}
 		else if (value == 3) {
-			if (test == 2) {
+			if (test == 1) {
+				quality = DOUBLE_DIMINISHED;
+			}
+			else if (test == 2) {
 				quality = DIMINISHED;
 			}
 			else if (test == 3) {
@@ -73,9 +91,15 @@ public class Interval {
 			else if (test == 5) {
 				quality = AUGMENTED;
 			}
+			else if (test == 6) {
+				quality = DOUBLE_AUGMENTED;
+			}
 		}
 		else if (value == 4) {
-			if (test == 4) {
+			if (test == 3) {
+				quality = DOUBLE_DIMINISHED;
+			}
+			else if (test == 4) {
 				quality = DIMINISHED;
 			}
 			else if (test == 5) {
@@ -84,9 +108,15 @@ public class Interval {
 			else if (test == 6) {
 				quality = AUGMENTED;
 			}
+			else if (test == 7) {
+				quality = DOUBLE_AUGMENTED;
+			}
 		}
 		else if (value == 5) {
-			if (test == 6) {
+			if (test == 5) {
+				quality = DOUBLE_DIMINISHED;
+			}
+			else if (test == 6) {
 				quality = DIMINISHED;
 			}
 			else if (test == 7) {
@@ -95,9 +125,15 @@ public class Interval {
 			else if (test == 8) {
 				quality = AUGMENTED;
 			}
+			else if (test == 9) {
+				quality = DOUBLE_AUGMENTED;
+			}
 		}
 		else if (value == 6) {
-			if (test == 7) {
+			if (test == 6) {
+				quality = DOUBLE_DIMINISHED;
+			}
+			else if (test == 7) {
 				quality = DIMINISHED;
 			}
 			else if (test == 8) {
@@ -109,9 +145,15 @@ public class Interval {
 			else if (test == 10) {
 				quality = AUGMENTED;
 			}
+			else if (test == 11) {
+				quality = DOUBLE_AUGMENTED;
+			}
 		}
 		else if (value == 7) {
-			if (test == 9) {
+			if (test == 8) {
+				quality = DOUBLE_DIMINISHED;
+			}
+			else if (test == 9) {
 				quality = DIMINISHED;
 			}
 			else if (test == 10) {
@@ -123,14 +165,25 @@ public class Interval {
 			else if (test == 0) {
 				quality = AUGMENTED;
 			}
+			else if (test == 1) {
+				quality = DOUBLE_AUGMENTED;
+			}
 		}
 	}
 	
+	
+	public int getValue() {
+		return value;
+	}
+	
+	public String getQuality() {
+		return quality;
+	}
 	/**
 	 * @return The interval as a string
 	 */
 	public String toString() {
-		return "" + quality + value;
+		return quality + value;
 	}
 	
 }
